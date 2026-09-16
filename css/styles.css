@@ -1,0 +1,38 @@
+/* Custom styles that live on top of Tailwind utilities (Play CDN).
+   Keep this file small: anything expressible as Tailwind classes belongs in index.html instead. */
+
+body {
+  font-family: 'Manrope', system-ui, sans-serif;
+}
+
+/* ---------- scroll reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .5s cubic-bezier(.16,1,.3,1), transform .5s cubic-bezier(.16,1,.3,1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+html.no-motion .reveal {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-ping { animation: none !important; }
+}
+
+/* ---------- mobile nav panel ---------- */
+@media (max-width: 767px) {
+  #navLinks {
+    transition: opacity .2s, transform .2s;
+  }
+  #navLinks.nav-closed {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+  }
+}

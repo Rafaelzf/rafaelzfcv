@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "docx": {
+      "source": "axoviq-ai/synthadoc",
+      "sourceType": "github",
+      "skillPath": "synthadoc/skills/docx/SKILL.md",
+      "computedHash": "f0382b9466eac16e8faa2da47e5c2d65c3f40cd8c0398652e70eed6a704833dd"
+    },
+    "pdf": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/pdf/SKILL.md",
+      "computedHash": "37226d4220d844377e6b2a386c51a011df4cd130855ff0b80bcc22f9c28abd57"
+    }
+  }
+}

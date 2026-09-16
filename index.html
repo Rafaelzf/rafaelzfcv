@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rafael Zanini Francucci, Software Engineer Front-end</title>
+<meta name="description" content="Rafael Zanini Francucci, engenheiro de software front-end em São Paulo. React, Next.js, TypeScript e micro-frontends, com 17 anos de experiência e 5 anos formando novos desenvolvedores.">
+<meta property="og:title" content="Rafael Zanini Francucci, Software Engineer Front-end">
+<meta property="og:description" content="17 anos construindo interfaces web. React, Next.js, TypeScript e micro-frontends.">
+<meta property="og:type" content="profile">
+<meta property="og:image" content="assets/perfil-0-Enhanced.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230e7a5f'/%3E%3Ctext x='32' y='43' font-family='Arial, sans-serif' font-weight='700' font-size='30' fill='%23f7f8f6' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7/css/flag-icons.min.css">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: '#14171a',
+          'ink-muted': '#5b6169',
+          'ink-faint': '#8b9096',
+          bg: '#f3f2ee',
+          surface: '#ffffff',
+          'surface-2': '#eef1ed',
+          border: '#e2e6e1',
+          accent: {
+            DEFAULT: '#0e7a5f',
+            strong: '#0a5c47',
+            light: '#12a37e',
+            tint: '#e2f2ec',
+          },
+        },
+        fontFamily: {
+          display: ['"Space Grotesk"', 'sans-serif'],
+          sans: ['Manrope', 'sans-serif'],
+          mono: ['"JetBrains Mono"', 'monospace'],
+        },
+        boxShadow: {
+          soft: '0 2px 10px -4px rgba(20,23,26,.12)',
+          strong: '0 18px 40px -20px rgba(20,23,26,.28)',
+        },
+      }
+    }
+  }
+</script>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-bg text-ink antialiased">
+<div id="top-sentinel" class="absolute top-0 h-px w-px"></div>
+
+<header id="siteNav" class="sticky top-0 z-50 bg-bg/90 backdrop-blur-md border-b border-transparent transition-shadow">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <div class="h-[68px] flex items-center justify-between gap-4">
+      <a href="#top" class="flex items-end gap-3 font-display font-semibold text-ink min-w-0">
+        <img src="assets/perfil-0-Enhanced.jpg" alt="" width="44" height="44" class="w-11 h-11 rounded-full object-cover border-2 border-white shadow-soft shrink-0">
+        <span class="truncate">Rafael Zanini Francucci</span>
+      </a>
+
+      <nav id="navLinks" class="nav-closed absolute lg:relative top-[68px] lg:top-auto left-0 right-0 flex flex-col lg:flex-row lg:items-center gap-0 lg:gap-7 bg-surface lg:bg-transparent border-b lg:border-0 border-border px-6 lg:px-0 text-sm text-ink-muted shadow-soft lg:shadow-none shrink-0">
+        <a href="#sobre" data-i18n="nav.sobre" class="py-3 lg:py-0 border-b lg:border-0 border-border hover:text-ink transition-colors">Sobre</a>
+        <a href="#experiencia" data-i18n="nav.experiencia" class="py-3 lg:py-0 border-b lg:border-0 border-border hover:text-ink transition-colors">Experiência</a>
+        <a href="#stack" data-i18n="nav.stack" class="py-3 lg:py-0 border-b lg:border-0 border-border hover:text-ink transition-colors">Stack</a>
+        <a href="#formacao" data-i18n="nav.formacao" class="py-3 lg:py-0 border-b lg:border-0 border-border hover:text-ink transition-colors">Formação</a>
+        <a href="#contato" data-i18n="nav.contato" class="py-3 lg:py-0 hover:text-ink transition-colors">Contato</a>
+      </nav>
+
+      <div class="flex items-center gap-3 shrink-0">
+        <a href="mailto:rf.francucci@gmail.com" data-i18n="nav.cta" class="hidden lg:inline-flex items-center gap-2 rounded-full bg-ink text-white px-5 py-2.5 text-sm font-semibold hover:bg-accent-strong transition-colors active:scale-95">Falar comigo</a>
+        <button id="navToggle" class="lg:hidden p-2 text-ink" aria-label="Abrir menu" aria-expanded="false"><i class="ph ph-list text-xl"></i></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="top" class="max-w-6xl mx-auto px-4 md:px-6 py-6 space-y-5">
+
+  <!-- ---------- profile header (LinkedIn-style) ---------- -->
+  <section id="heroSection" class="reveal relative bg-surface rounded-2xl border border-border shadow-soft overflow-hidden">
+    <div class="relative h-28 sm:h-36 bg-gradient-to-br from-accent-strong via-accent to-accent-light overflow-hidden">
+      <div id="heroSpot" class="pointer-events-none absolute inset-0" style="background: radial-gradient(560px circle at var(--x,70%) var(--y,20%), rgba(255,255,255,.16), transparent 60%);"></div>
+
+      <div id="langSwitcher" class="absolute top-4 right-4 flex gap-2.5 z-10">
+        <button type="button" data-lang="pt" aria-label="Português" aria-pressed="true" class="lang-btn w-9 h-7 rounded-md overflow-hidden ring-2 ring-white shadow-strong scale-110 transition-all">
+          <span class="fi fi-pt block w-full h-full"></span>
+        </button>
+        <button type="button" data-lang="en" aria-label="English" aria-pressed="false" class="lang-btn w-9 h-7 rounded-md overflow-hidden ring-2 ring-transparent opacity-60 hover:opacity-100 transition-all">
+          <span class="fi fi-gb block w-full h-full"></span>
+        </button>
+        <button type="button" data-lang="es" aria-label="Español" aria-pressed="false" class="lang-btn w-9 h-7 rounded-md overflow-hidden ring-2 ring-transparent opacity-60 hover:opacity-100 transition-all">
+          <span class="fi fi-es block w-full h-full"></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="px-6 sm:px-10 pt-6 sm:pt-8 pb-8">
+      <div class="flex flex-col sm:flex-row sm:items-end gap-5">
+        <img src="assets/perfil-0-Enhanced.jpg" alt="Foto de Rafael Zanini Francucci" width="168" height="168" class="w-32 h-32 sm:w-[168px] sm:h-[168px] rounded-full object-cover border-4 border-surface shadow-strong shrink-0">
+
+        <div class="flex-1 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+          <div>
+            <span class="inline-flex items-center gap-2 rounded-full bg-accent-tint px-3.5 py-1 text-xs font-semibold text-accent-strong mb-3">
+              <span class="relative flex h-1.5 w-1.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                <span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent"></span>
+              </span>
+              <span data-i18n="header.status">Disponível para novas oportunidades</span>
+            </span>
+            <h1 class="font-display text-2xl sm:text-[1.75rem] font-bold text-ink leading-tight">Rafael Zanini Francucci</h1>
+            <p class="text-ink-muted mt-1" data-i18n="header.role">Software Engineer, especialista em Front-end</p>
+            <p class="text-ink-faint text-sm mt-1 flex items-center gap-1.5"><i class="ph ph-map-pin"></i><span data-i18n="header.location">São Paulo, Brasil</span></p>
+          </div>
+
+          <div class="flex flex-wrap gap-3">
+            <a href="mailto:rf.francucci@gmail.com" class="inline-flex items-center gap-2 rounded-full bg-ink text-white px-6 py-3 text-sm font-semibold hover:bg-accent-strong transition-colors active:scale-95"><i class="ph ph-envelope-simple"></i><span data-i18n="nav.cta">Falar comigo</span></a>
+            <button type="button" class="pdf-download-btn inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-semibold text-ink hover:border-ink transition-colors active:scale-95"><i class="ph ph-download-simple"></i><span data-i18n="header.ctaResume">Currículo em PDF</span></button>
+          </div>
+        </div>
+      </div>
+
+      <p class="mt-6 max-w-3xl text-ink-muted leading-relaxed border-t border-border pt-6" data-i18n="header.bio">
+        Arquitetura e desenvolvimento de aplicações web escaláveis: construo interfaces de alta performance, acessíveis e responsivas com <strong class="text-ink font-semibold">React.js</strong>, <strong class="text-ink font-semibold">Next.js</strong> e <strong class="text-ink font-semibold">TypeScript</strong>, garantindo segurança de tipos e manutenibilidade de código em todo o ciclo de desenvolvimento.
+      </p>
+    </div>
+  </section>
+
+  <!-- ---------- sobre ---------- -->
+  <section id="sobre" class="reveal bg-surface rounded-2xl border border-border shadow-soft p-6 sm:p-10">
+    <h2 class="font-display text-2xl font-semibold text-ink mb-5" data-i18n="sobre.heading">Sobre</h2>
+
+    <div class="text-ink-muted leading-relaxed space-y-4 max-w-3xl">
+      <p data-i18n="sobre.p1">Desenvolvedor <strong class="text-ink font-semibold">Full Stack</strong> especializado em tecnologias modernas de Front-End e Web, com profundo conhecimento em React, Next.js, Node.js e TypeScript. Tenho experiência na construção de aplicações web de alta performance, escaláveis e de fácil manutenção, desde a arquitetura e integração de APIs até o deploy e a otimização.</p>
+      <p data-i18n="sobre.p2">Domínio em desenvolvimento baseado em componentes, renderização no servidor (SSR), geração de sites estáticos (SSG) e design de interfaces responsivas com foco em performance e acessibilidade.</p>
+      <p data-i18n="sobre.p3">Proficiente em APIs RESTful e GraphQL, gerenciamento de estado (Redux, Zustand, Context API) e frameworks de teste (Jest, Cypress, Playwright). Tenho experiência com bancos de dados (PostgreSQL, MongoDB, Redis, Prisma) e ferramentas de DevOps (Docker, CI/CD, Vercel, AWS). Sou apaixonado por código limpo, escalabilidade, experiência do desenvolvedor e pela entrega de produtos digitais elegantes usando as tecnologias web mais recentes.</p>
+      <p data-i18n="sobre.p4">Atualmente, estou expandindo meu conhecimento em Python e no desenvolvimento de agentes de IA para aprimorar experiências de usuário e automação. Apaixonado por tecnologia, exploro constantemente formas de unir engenharia de software com as tendências emergentes de IA.</p>
+      <p data-i18n="sobre.p5">Meu conjunto de habilidades também inclui Docker, Git, CI/CD, MySQL, PostgreSQL, MongoDB, Firebase, Express.js, Astro.js, Vue.js, Tailwind CSS, SCSS, Styled-components, TDD, Jest, Testing Library, Tsup, Vite e Puppeteer, entre diversas outras ferramentas e frameworks.</p>
+    </div>
+
+    <div class="mt-8 flex items-center gap-4 rounded-xl border border-border bg-bg p-4 max-w-md">
+      <div class="w-12 h-12 rounded-full bg-accent-tint flex items-center justify-center shrink-0">
+        <i class="ph ph-graduation-cap text-accent-strong text-xl"></i>
+      </div>
+      <p class="text-sm text-ink-muted"><span class="block font-display font-semibold text-ink mb-0.5" data-i18n="sobre.teacherTitle">Professor voluntário desde 2021</span><span data-i18n="sobre.teacherDesc">Ensino front-end para quem nunca escreveu uma linha de código, no programa Do Zero ao Um.</span></p>
+    </div>
+
+    <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-6 border-t border-border pt-6">
+      <div><div class="font-mono text-2xl font-semibold text-accent-strong">17</div><div class="text-ink-muted text-sm mt-1" data-i18n="sobre.stat1">anos escrevendo front-end</div></div>
+      <div><div class="font-mono text-2xl font-semibold text-accent-strong">10</div><div class="text-ink-muted text-sm mt-1" data-i18n="sobre.stat2">empresas e squads</div></div>
+      <div><div class="font-mono text-2xl font-semibold text-accent-strong">5+</div><div class="text-ink-muted text-sm mt-1" data-i18n="sobre.stat3">anos formando devs</div></div>
+      <div><div class="font-mono text-2xl font-semibold text-accent-strong">58</div><div class="text-ink-muted text-sm mt-1" data-i18n="sobre.stat4">certificações</div></div>
+    </div>
+  </section>
+
+  <!-- ---------- experiência ---------- -->
+  <section id="experiencia" class="reveal bg-surface rounded-2xl border border-border shadow-soft p-6 sm:p-10">
+    <h2 class="font-display text-2xl font-semibold text-ink mb-1" data-i18n="exp.heading">Experiência</h2>
+    <p class="text-ink-muted text-sm mb-7" data-i18n="exp.subheading">Trajetória recente, da mais atual para a mais antiga.</p>
+
+    <div class="divide-y divide-border">
+
+      <div class="flex gap-4 py-6 first:pt-0">
+        <img src="assets/logos/act-digital.png" alt="Logo da act digital" width="48" height="48" class="w-12 h-12 rounded-lg object-cover shrink-0 border border-border">
+        <div class="min-w-0">
+          <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <span class="font-display font-semibold text-base text-ink" data-i18n="exp.act.role">Software Engineer</span>
+            <span class="font-mono text-xs text-ink-faint" data-i18n="exp.act.dates">mar 2026 - atual</span>
+          </div>
+          <div class="text-accent-strong font-semibold text-sm mb-2.5">act digital</div>
+          <ul class="space-y-1.5 mb-3.5 max-w-xl">
+            <li class="relative pl-4 text-ink-muted text-[0.95rem] before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:w-[5px] before:h-[5px] before:rounded-full before:bg-ink-faint" data-i18n="exp.act.b1">Arquitetura e desenvolvimento de aplicações web escaláveis: construção de interfaces de alta performance, acessíveis e responsivas com React.js, Next.js e TypeScript, garantindo segurança de tipos e manutenibilidade de código em todo o ciclo de desenvolvimento.</li>
+            <li class="relative pl-4 text-ink-muted text-[0.95rem] before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:w-[5px] before:h-[5px] before:rounded-full before:bg-ink-faint" data-i18n="exp.act.b2">Gerenciamento de estado avançado e lógica modular: fluxos de dados robustos com Redux e Context API para estados globais complexos e efeitos colaterais, otimizando performance e consistência dos dados.</li>
+            <li class="relative pl-4 text-ink-muted text-[0.95rem] before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:w-[5px] before:h-[5px] before:rounded-full before:bg-ink-faint" data-i18n="exp.act.b3">Implementação e orquestração de micro-frontends: arquiteturas para deploys independentes, flexibilidade tecnológica e integração fluida entre módulos desacoplados em ecossistemas de grande escala.</li>
+            <li class="relative pl-4 text-ink-muted text-[0.95rem] before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:w-[5px] before:h-[5px] before:rounded-full before:bg-ink-faint" data-i18n="exp.act.b4">Design systems e estilização moderna: interfaces consistentes e refinadas com Shadcn/ui para componentes acessíveis e Styled Components ou Tailwind CSS para estilos altamente customizáveis.</li>
+            <li class="relative pl-4 text-ink-muted text-[0.95rem] before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:w-[5px] before:h-[5px] before:rounded-full before:bg-ink-faint" data-i18n="exp.act.b5">Plataformas com IA e workflows inteligentes: contribuição em plataformas de curadoria com IA, unindo interatividade de front-end a agentes inteligentes e workflows automatizados de back-end.</li>
+            <li class="relative pl-4 text-ink-muted text-[0.95rem] before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:w-[5px] before:h-[5px] before:rounded-full before:bg-ink-faint" data-i18n="exp.act.b6">DevOps e infraestrutura escalável: ambientes containerizados com Docker e pipelines de CI/CD automatizados (GitHub Actions, Google Cloud) para entregas rápidas e de alta disponibilidade.</li>
+            <li class="relative pl-4 text-ink-muted text-[0.95rem] before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:w-[5px] before:h-[5px] before:rounded-full before:bg-ink-faint" data-i18n="exp.act.b7">Colaboração ágil e descoberta estratégica de produto: atuação em Scrum/Kanban, colaborando com designers de UX/UI e stakeholders para traduzir objetivos de negócio em requisitos técnicos.</li>
+          </ul>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs text-ink-muted bg-surface-2 rounded-full px-3 py-1">React</span>
+            <span class="text-xs text-ink-muted bg-surface-2 rounded-full px-3 py-1">Next.js</span>
+            <span class="text-xs text-ink-muted bg-surface-2 rounded-full px-3 py-1">TypeScript</span>
+            <span class="text-xs text-ink-muted bg-surface-2 rounded-full px-3 py-1">Docker</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex gap-4 py-6">
+        <img src="assets/logos/flow.png" alt="Logo da FLOW Executive Finders" width="48" height="48" class="w-12 h-12 rounded-lg object-cover shrink-0 border border-border">
+        <div class="min-w-0">
+          <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <span class="font-display font-semibold text-base text-ink" data-i18n="exp.flow.role">Software Engineer Front-end</span>
+            <span class="font-mono text-xs text-ink-faint" data-i18n="exp.flow.dates">abr 2024 - mar 2026</span>
+          </div>
+          <div class="text-accent-strong font-semibold text-sm mb-2.5">FLOW Executive Finders</div>
+          <ul class="space-y-1.5 mb-3.5 max-w-xl">
+            <li class="relative pl-4 text-ink-muted text-[0.95rem] before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:w-[5px] before:h-[5px] before:rounded-full before:bg-ink-faint" data-i18n="exp.flow.b1">Desenvolvimento de aplicações web modernas, responsivas e de alta performance (Vue.js, React.js, Next.js, Astro.js, TypeScript, Tailwind CSS).</li>
+            <li class="relative pl-4 text-ink-muted text-[0.95rem] before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:w-[5px] before:h-[5px] before:rounded-full before:bg-ink-faint" data-i18n="exp.flow.b2">Colaboração próxima com designers de UX/UI e product managers para implementar funcionalidades, melhorar taxas de conversão e otimizar jornadas do cliente.</li>
+            <li class="relative pl-4 text-ink-muted text-[0.95rem] before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:w-[5px] before:h-[5px] before:rounded-full before:bg-ink-faint" data-i18n="exp.flow.b3">Integração com back-end e desenvolvimento de APIs (Node.js, Express.js, REST).</li>
+            <li class="relative pl-4 text-ink-muted text-[0.95rem] before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:w-[5px] before:h-[5px] before:rounded-full before:bg-ink-faint" data-i18n="exp.flow.b4">Infraestrutura escalável e pipelines de CI/CD (Google Cloud, Docker, GitHub Actions).</li>
+            <li class="relative pl-4 text-ink-muted text-[0.95rem] before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:w-[5px] before:h-[5px] before:rounded-full before:bg-ink-faint" data-i18n="exp.flow.b5">Participação em uma plataforma de curadoria com IA, integrando interatividade de front-end com automação de workflows e agentes inteligentes.</li>
+            <li class="relative pl-4 text-ink-muted text-[0.95rem] before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:w-[5px] before:h-[5px] before:rounded-full before:bg-ink-faint" data-i18n="exp.flow.b6">Colaboração ativa com stakeholders na descoberta e desenvolvimento de produto, contribuindo com análise de requisitos, desenho de soluções e priorização de funcionalidades.</li>
+          </ul>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs text-ink-muted bg-surface-2 rounded-full px-3 py-1">Vue.js</span>
+            <span class="text-xs text-ink-muted bg-surface-2 rounded-full px-3 py-1">Next.js</span>
+            <span class="text-xs text-ink-muted bg-surface-2 rounded-full px-3 py-1">Node.js</span>
+            <span class="text-xs text-ink-muted bg-surface-2 rounded-full px-3 py-1">Google Cloud</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex gap-4 py-6">
+        <img src="assets/logos/farmtech.png" alt="Logo da Farmtech" width="48" height="48" class="w-12 h-12 rounded-lg object-cover shrink-0 border border-border">
+        <div class="min-w-0">
+          <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <span class="font-display font-semibold text-base text-ink" data-i18n="exp.farmtech.role">Software Engineer Front-end</span>
+            <span class="font-mono text-xs text-ink-faint" data-i18n="exp.farmtech.dates">jun 2023 - abr 2024</span>
+          </div>
+          <div class="text-accent-strong font-semibold text-sm mb-2.5">Farmtech</div>
+          <ul class="space-y-1.5 mb-3.5 max-w-xl">
+            <li class="relative pl-4 text-ink-muted text-[0.95rem] before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:w-[5px] before:h-[5px] before:rounded-full before:bg-ink-faint" data-i18n="exp.farmtech.b1">Desenvolvimento e manutenção de interfaces de e-commerce de alta performance e responsivas para a Leroy Merlin, com React.js, Next.js, Vue.js e TypeScript, garantindo experiência consistente entre web e mobile.</li>
+            <li class="relative pl-4 text-ink-muted text-[0.95rem] before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:w-[5px] before:h-[5px] before:rounded-full before:bg-ink-faint" data-i18n="exp.farmtech.b2">Colaboração próxima com designers de UX/UI e product managers para implementar funcionalidades, melhorar taxas de conversão e otimizar jornadas do cliente.</li>
+            <li class="relative pl-4 text-ink-muted text-[0.95rem] before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:w-[5px] before:h-[5px] before:rounded-full before:bg-ink-faint" data-i18n="exp.farmtech.b3">Integração de componentes de front-end com APIs REST e GraphQL, lidando com catálogos de produtos dinâmicos, carrinho de compras e fluxos de checkout.</li>
+            <li class="relative pl-4 text-ink-muted text-[0.95rem] before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:w-[5px] before:h-[5px] before:rounded-full before:bg-ink-faint" data-i18n="exp.farmtech.b4">Implementação de testes A/B, rastreamento de analytics e otimizações de performance para aumentar o engajamento do usuário e a velocidade de carregamento das páginas.</li>
+            <li class="relative pl-4 text-ink-muted text-[0.95rem] before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:w-[5px] before:h-[5px] before:rounded-full before:bg-ink-faint" data-i18n="exp.farmtech.b5">Participação em cerimônias ágeis, planejamento de sprints e code reviews, contribuindo para a melhoria contínua dos processos de desenvolvimento.</li>
+          </ul>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs text-ink-muted bg-surface-2 rounded-full px-3 py-1">React</span>
+            <span class="text-xs text-ink-muted bg-surface-2 rounded-full px-3 py-1">Next.js</span>
+            <span class="text-xs text-ink-muted bg-surface-2 rounded-full px-3 py-1">GraphQL</span>
+            <span class="text-xs text-ink-muted bg-surface-2 rounded-full px-3 py-1">Micro-frontends</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex gap-4 py-6">
+        <img src="assets/logos/maitha-tech.png" alt="Logo da Maitha Tech" width="48" height="48" class="w-12 h-12 rounded-lg object-cover shrink-0 border border-border">
+        <div class="min-w-0">
+          <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <span class="font-display font-semibold text-base text-ink" data-i18n="exp.maitha.role">Senior Front-End Developer</span>
+            <span class="font-mono text-xs text-ink-faint" data-i18n="exp.maitha.dates">ago 2020 - jun 2023</span>
+          </div>
+          <div class="text-accent-strong font-semibold text-sm mb-2.5">Maitha Tech</div>
+          <ul class="space-y-1.5 mb-3.5 max-w-xl">
+            <li class="relative pl-4 text-ink-muted text-[0.95rem] before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:w-[5px] before:h-[5px] before:rounded-full before:bg-ink-faint" data-i18n="exp.maitha.b1">Projeto base em React para plataforma de upload de dados, na Serasa Experian.</li>
+            <li class="relative pl-4 text-ink-muted text-[0.95rem] before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:w-[5px] before:h-[5px] before:rounded-full before:bg-ink-faint" data-i18n="exp.maitha.b2">Integração com sistema legado em Next.js.</li>
+            <li class="relative pl-4 text-ink-muted text-[0.95rem] before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:w-[5px] before:h-[5px] before:rounded-full before:bg-ink-faint" data-i18n="exp.maitha.b3">Fluxo de dados com back-end em Python e Node.js.</li>
+          </ul>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs text-ink-muted bg-surface-2 rounded-full px-3 py-1">React</span>
+            <span class="text-xs text-ink-muted bg-surface-2 rounded-full px-3 py-1">Next.js</span>
+            <span class="text-xs text-ink-muted bg-surface-2 rounded-full px-3 py-1">Python</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex gap-4 py-6">
+        <img src="assets/logos/mjv.png" alt="Logo da MJV Technology & Innovation" width="48" height="48" class="w-12 h-12 rounded-lg object-cover shrink-0 border border-border">
+        <div class="min-w-0">
+          <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <span class="font-display font-semibold text-base text-ink" data-i18n="exp.mjv.role">Desenvolvedor ReactJS</span>
+            <span class="font-mono text-xs text-ink-faint" data-i18n="exp.mjv.dates">out 2019 - ago 2020</span>
+          </div>
+          <div class="text-accent-strong font-semibold text-sm mb-2.5">MJV Technology &amp; Innovation</div>
+          <ul class="space-y-1.5 mb-3.5 max-w-xl">
+            <li class="relative pl-4 text-ink-muted text-[0.95rem] before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:w-[5px] before:h-[5px] before:rounded-full before:bg-ink-faint" data-i18n="exp.mjv.b1">Arquitetura e desenvolvimento de aplicações web escaláveis: construção de interfaces de alta performance, acessíveis e responsivas com React.js, Next.js e TypeScript, garantindo segurança de tipos e manutenibilidade de código em todo o ciclo de desenvolvimento.</li>
+            <li class="relative pl-4 text-ink-muted text-[0.95rem] before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:w-[5px] before:h-[5px] before:rounded-full before:bg-ink-faint" data-i18n="exp.mjv.b2">Gerenciamento de estado avançado e lógica modular: fluxos de dados robustos com Redux e Context API para estados globais complexos e efeitos colaterais, otimizando performance e consistência dos dados.</li>
+            <li class="relative pl-4 text-ink-muted text-[0.95rem] before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:w-[5px] before:h-[5px] before:rounded-full before:bg-ink-faint" data-i18n="exp.mjv.b3">Colaboração ágil e descoberta estratégica de produto: atuação em Scrum/Kanban, colaborando com designers de UX/UI e stakeholders para traduzir objetivos de negócio em requisitos técnicos.</li>
+          </ul>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs text-ink-muted bg-surface-2 rounded-full px-3 py-1">React</span>
+            <span class="text-xs text-ink-muted bg-surface-2 rounded-full px-3 py-1">Next.js</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <details class="group mt-5">
+      <summary class="cursor-pointer font-semibold text-accent-strong text-sm flex items-center gap-1.5 list-none [&::-webkit-details-marker]:hidden">
+        <i class="ph ph-caret-right transition-transform duration-200 group-open:rotate-90"></i>
+        <span data-i18n="exp.older.summary">Trajetória anterior (2009 a 2019)</span>
+      </summary>
+      <ul class="mt-4 space-y-3">
+        <li class="text-sm text-ink-muted border-l-2 border-border pl-3.5" data-i18n="exp.older.liq"><b class="text-ink font-semibold">Liq</b> · Technology Analyst · 2014 a 2019. Coordenação de squad full-stack e API de dados para BI.</li>
+        <li class="text-sm text-ink-muted border-l-2 border-border pl-3.5" data-i18n="exp.older.netbiis"><b class="text-ink font-semibold">Netbiis</b> · Frontend Developer · 2013 a 2014. Projeto base em React reaproveitado por outros times.</li>
+        <li class="text-sm text-ink-muted border-l-2 border-border pl-3.5" data-i18n="exp.older.w51"><b class="text-ink font-semibold">W51 Informática e Marketing</b> · Frontend Developer · 2012. Sites em HTML, CSS, JavaScript e jQuery.</li>
+        <li class="text-sm text-ink-muted border-l-2 border-border pl-3.5" data-i18n="exp.older.tv1"><b class="text-ink font-semibold">Grupo TV1</b> · Frontend Developer · 2010 a 2012. Sites em HTML, CSS e JavaScript.</li>
+        <li class="text-sm text-ink-muted border-l-2 border-border pl-3.5" data-i18n="exp.older.asteria"><b class="text-ink font-semibold">Astéria Internet Solutions</b> · Web Developer · 2009 a 2010. Primeiros passos com HTML e CSS.</li>
+      </ul>
+    </details>
+  </section>
+
+  <!-- ---------- stack ---------- -->
+  <section id="stack" class="reveal bg-surface rounded-2xl border border-border shadow-soft p-6 sm:p-10">
+    <h2 class="font-display text-2xl font-semibold text-ink mb-7" data-i18n="nav.stack">Stack</h2>
+
+    <div class="grid sm:grid-cols-3 gap-x-8 gap-y-8">
+      <div>
+        <h3 class="text-xs uppercase tracking-wide text-ink-faint font-semibold mb-4" data-i18n="stack.frontend">Front-end</h3>
+        <div class="flex flex-col gap-2">
+          <span class="inline-flex items-center gap-2 text-sm text-ink bg-bg border border-border rounded-lg px-3 py-2"><i class="ph ph-check text-accent"></i>React</span>
+          <span class="inline-flex items-center gap-2 text-sm text-ink bg-bg border border-border rounded-lg px-3 py-2"><i class="ph ph-check text-accent"></i>Next.js</span>
+          <span class="inline-flex items-center gap-2 text-sm text-ink bg-bg border border-border rounded-lg px-3 py-2"><i class="ph ph-check text-accent"></i>Vue.js</span>
+          <span class="inline-flex items-center gap-2 text-sm text-ink bg-bg border border-border rounded-lg px-3 py-2"><i class="ph ph-check text-accent"></i>TypeScript</span>
+          <span class="inline-flex items-center gap-2 text-sm text-ink bg-bg border border-border rounded-lg px-3 py-2"><i class="ph ph-check text-accent"></i>JavaScript (ES6+)</span>
+          <span class="inline-flex items-center gap-2 text-sm text-ink bg-bg border border-border rounded-lg px-3 py-2"><i class="ph ph-check text-accent"></i>Astro.js</span>
+          <span class="inline-flex items-center gap-2 text-sm text-ink bg-bg border border-border rounded-lg px-3 py-2"><i class="ph ph-check text-accent"></i>Tailwind CSS</span>
+          <span class="inline-flex items-center gap-2 text-sm text-ink bg-bg border border-border rounded-lg px-3 py-2"><i class="ph ph-check text-accent"></i>Styled Components</span>
+          <span class="inline-flex items-center gap-2 text-sm text-ink bg-bg border border-border rounded-lg px-3 py-2"><i class="ph ph-check text-accent"></i>Shadcn/ui</span>
+          <span class="inline-flex items-center gap-2 text-sm text-ink bg-bg border border-border rounded-lg px-3 py-2"><i class="ph ph-check text-accent"></i>Redux</span>
+        </div>
+      </div>
+      <div>
+        <h3 class="text-xs uppercase tracking-wide text-ink-faint font-semibold mb-4" data-i18n="stack.backend">Back-end &amp; dados</h3>
+        <div class="flex flex-col gap-2">
+          <span class="inline-flex items-center gap-2 text-sm text-ink bg-bg border border-border rounded-lg px-3 py-2"><i class="ph ph-check text-accent"></i>Node.js</span>
+          <span class="inline-flex items-center gap-2 text-sm text-ink bg-bg border border-border rounded-lg px-3 py-2"><i class="ph ph-check text-accent"></i>Express.js</span>
+          <span class="inline-flex items-center gap-2 text-sm text-ink bg-bg border border-border rounded-lg px-3 py-2"><i class="ph ph-check text-accent"></i>Java</span>
+          <span class="inline-flex items-center gap-2 text-sm text-ink bg-bg border border-border rounded-lg px-3 py-2"><i class="ph ph-check text-accent"></i>Spring Boot</span>
+          <span class="inline-flex items-center gap-2 text-sm text-ink bg-bg border border-border rounded-lg px-3 py-2"><i class="ph ph-check text-accent"></i>REST &amp; GraphQL</span>
+          <span class="inline-flex items-center gap-2 text-sm text-ink bg-bg border border-border rounded-lg px-3 py-2"><i class="ph ph-check text-accent"></i>MySQL &amp; PostgreSQL</span>
+          <span class="inline-flex items-center gap-2 text-sm text-ink bg-bg border border-border rounded-lg px-3 py-2"><i class="ph ph-check text-accent"></i>MongoDB &amp; Redis</span>
+          <span class="inline-flex items-center gap-2 text-sm text-ink bg-bg border border-border rounded-lg px-3 py-2"><i class="ph ph-check text-accent"></i>Prisma &amp; Firebase</span>
+        </div>
+      </div>
+      <div>
+        <h3 class="text-xs uppercase tracking-wide text-ink-faint font-semibold mb-4" data-i18n="stack.infra">Infra &amp; práticas</h3>
+        <div class="flex flex-col gap-2">
+          <span class="inline-flex items-center gap-2 text-sm text-ink bg-bg border border-border rounded-lg px-3 py-2"><i class="ph ph-check text-accent"></i>Docker &amp; Git</span>
+          <span class="inline-flex items-center gap-2 text-sm text-ink bg-bg border border-border rounded-lg px-3 py-2"><i class="ph ph-check text-accent"></i>CI/CD</span>
+          <span class="inline-flex items-center gap-2 text-sm text-ink bg-bg border border-border rounded-lg px-3 py-2"><i class="ph ph-check text-accent"></i>Vercel &amp; AWS</span>
+          <span class="inline-flex items-center gap-2 text-sm text-ink bg-bg border border-border rounded-lg px-3 py-2"><i class="ph ph-check text-accent"></i>Micro-frontends</span>
+          <span class="inline-flex items-center gap-2 text-sm text-ink bg-bg border border-border rounded-lg px-3 py-2"><i class="ph ph-check text-accent"></i>Jest, Cypress &amp; Playwright</span>
+          <span class="inline-flex items-center gap-2 text-sm text-ink bg-bg border border-border rounded-lg px-3 py-2"><i class="ph ph-check text-accent"></i>Vite &amp; Tsup</span>
+          <span class="inline-flex items-center gap-2 text-sm text-ink bg-bg border border-border rounded-lg px-3 py-2"><i class="ph ph-check text-accent"></i>Scrum/Kanban</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- formação ---------- -->
+  <section id="formacao" class="reveal bg-surface rounded-2xl border border-border shadow-soft p-6 sm:p-10">
+    <h2 class="font-display text-2xl font-semibold text-ink mb-7" data-i18n="form.heading">Formação</h2>
+
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <h3 class="font-semibold text-ink mb-4" data-i18n="form.academic">Formação acadêmica</h3>
+        <div class="border-b border-border pb-4 mb-4">
+          <div class="font-semibold text-ink" data-i18n="form.degree">Design Industrial, Comunicação Visual e Informação</div>
+          <div class="text-accent-strong text-sm font-medium">Universidade Presbiteriana Mackenzie</div>
+          <div class="text-ink-faint text-xs mt-1" data-i18n="form.degreeDates">2001 a 2006</div>
+        </div>
+
+        <h3 class="font-semibold text-ink mt-6 mb-4" data-i18n="form.continuous">Formação contínua</h3>
+        <div class="space-y-4">
+          <div><div class="font-medium text-ink text-sm">JavaScript, Node.js, ReactJS, React + Redux</div><div class="text-accent-strong text-sm">Rocketseat</div></div>
+          <div><div class="font-medium text-ink text-sm" data-i18n="form.course2">Trilhas de Java, Spring Boot, SQL e JavaScript avançado</div><div class="text-accent-strong text-sm">Alura</div></div>
+          <div><div class="font-medium text-ink text-sm" data-i18n="form.course3">React Hooks e tópicos avançados</div><div class="text-accent-strong text-sm">TreinaWeb</div></div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="font-semibold text-ink mb-4" data-i18n="form.certsHeading">Certificações em destaque</h3>
+        <div class="divide-y divide-border">
+          <div class="flex justify-between gap-3 py-2.5 text-sm"><span class="text-ink">Next.js 14 &amp; React, The Complete Guide</span><span class="font-mono text-xs text-ink-faint whitespace-nowrap">Udemy · 2024</span></div>
+          <div class="flex justify-between gap-3 py-2.5 text-sm"><span class="text-ink" data-i18n="form.cert2name">Spring Boot 3, API Rest em Java</span><span class="font-mono text-xs text-ink-faint whitespace-nowrap">Alura · 2024</span></div>
+          <div class="flex justify-between gap-3 py-2.5 text-sm"><span class="text-ink" data-i18n="form.cert3name">SQL com MySQL</span><span class="font-mono text-xs text-ink-faint whitespace-nowrap">Alura</span></div>
+          <div class="flex justify-between gap-3 py-2.5 text-sm"><span class="text-ink">Apache Maven</span><span class="font-mono text-xs text-ink-faint whitespace-nowrap">Alura</span></div>
+          <div class="flex justify-between gap-3 py-2.5 text-sm"><span class="text-ink" data-i18n="form.cert5name">Advanced JavaScript I, II e III</span><span class="font-mono text-xs text-ink-faint whitespace-nowrap">Alura</span></div>
+          <div class="flex justify-between gap-3 py-2.5 text-sm"><span class="text-ink" data-i18n="form.cert6name">React: componentes e integração com API</span><span class="font-mono text-xs text-ink-faint whitespace-nowrap">Alura</span></div>
+          <div class="flex justify-between gap-3 py-2.5 text-sm"><span class="text-ink">React, Unleashing the Power of Hooks</span><span class="font-mono text-xs text-ink-faint whitespace-nowrap">TreinaWeb</span></div>
+          <div class="flex justify-between gap-3 py-2.5 text-sm"><span class="text-ink">Fundamentals of Scrum</span><span class="font-mono text-xs text-ink-faint whitespace-nowrap">LinkedIn</span></div>
+        </div>
+        <a href="https://www.linkedin.com/in/rafaelzaninifrancucci/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 mt-5 text-sm font-semibold text-accent-strong hover:text-accent transition-colors"><i class="ph ph-arrow-up-right"></i><span data-i18n="form.certsMore">+ 50 outras certificações no LinkedIn</span></a>
+
+        <div class="flex flex-wrap gap-2 mt-8">
+          <span class="text-sm bg-bg border border-border rounded-full px-3.5 py-1.5" data-i18n="form.langPt">Português, nativo</span>
+          <span class="text-sm bg-bg border border-border rounded-full px-3.5 py-1.5" data-i18n="form.langEn">Inglês, intermediário</span>
+          <span class="text-sm bg-bg border border-border rounded-full px-3.5 py-1.5" data-i18n="form.langEs">Espanhol, avançado</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="contato" class="mt-8 bg-ink text-[#eef1ed] pt-16 pb-8">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <div class="reveal grid md:grid-cols-2 gap-10 items-end pb-10 border-b border-white/10">
+      <h2 class="font-display text-3xl md:text-4xl font-semibold text-white max-w-sm" data-i18n="footer.heading">Vamos conversar sobre a próxima vaga?</h2>
+      <div class="flex flex-wrap gap-3.5 md:justify-end">
+        <a href="mailto:rf.francucci@gmail.com" class="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white hover:bg-accent-light transition-colors active:scale-95"><i class="ph ph-envelope-simple"></i><span data-i18n="nav.cta">Falar comigo</span></a>
+        <button type="button" class="pdf-download-btn inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white hover:border-white transition-colors active:scale-95"><i class="ph ph-download-simple"></i><span data-i18n="header.ctaResume">Currículo em PDF</span></button>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap gap-x-8 gap-y-3 py-7 text-sm">
+      <a href="mailto:rf.francucci@gmail.com" class="flex items-center gap-2 hover:text-accent-light transition-colors"><i class="ph ph-envelope-simple text-accent"></i>rf.francucci@gmail.com</a>
+      <a href="tel:+5511992303888" class="flex items-center gap-2 hover:text-accent-light transition-colors"><i class="ph ph-phone text-accent"></i>+55 11 99230-3888</a>
+      <span class="flex items-center gap-2"><i class="ph ph-map-pin text-accent"></i>São Paulo, SP</span>
+      <a href="https://www.linkedin.com/in/rafaelzaninifrancucci/" target="_blank" rel="noopener" class="flex items-center gap-2 hover:text-accent-light transition-colors"><i class="ph ph-linkedin-logo text-accent"></i>LinkedIn</a>
+      <a href="https://github.com/Rafaelzf" target="_blank" rel="noopener" class="flex items-center gap-2 hover:text-accent-light transition-colors"><i class="ph ph-github-logo text-accent"></i>GitHub</a>
+    </div>
+
+    <div class="flex flex-wrap justify-between gap-2 pt-4 text-xs text-white/50">
+      <span>© 2026 Rafael Zanini Francucci.</span>
+      <span data-i18n="footer.credit">Construído com HTML, Tailwind CSS e JavaScript.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/pdf.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
